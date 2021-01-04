@@ -70,7 +70,7 @@ mongoose.connect(`mongodb+srv://toyosi:toyosi@cluster0.ppck6.mongodb.net/mern?re
     useUnifiedTopology: true,
     useNewUrlParser: true
 }).then(() => {
-    app.listen(5000);
+    app.listen(process.env.PORT || 5000);
 }).catch(err => {
     console.log(err);
 });
