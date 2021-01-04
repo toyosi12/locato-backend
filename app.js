@@ -64,14 +64,12 @@ app.use((error, req, res, next) => {
     res.status(error.code || 500);
     res.json({message: error.message || 'An unknow error occured!'});
 })
-mongoose.connect(
-    `mongodb+srv://toyosi:toyosi@cluster0.ppck6.mongodb.net/mern?retryWrites=true&w=majority`,
-    { 
-        useNewUrlParser: true, 
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    }
-    ).then(() => {
+mongoose.connect(`mongodb+srv://toyosi:toyosi@cluster0.ppck6.mongodb.net/mern?retryWrites=true&w=majority`,
+{
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+}).then(() => {
     app.listen(5000);
 }).catch(err => {
     console.log(err);
