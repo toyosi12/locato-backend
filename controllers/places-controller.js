@@ -1,5 +1,4 @@
 const HttpError = require('../models/http-error');
-const uuid = require('uuid/v4');
 const { validationResult} = require('express-validator');
 const getCoordsForAddress = require('../util/location');
 const mongoose = require('mongoose');
